@@ -1,0 +1,25 @@
+The solution involves ensuring that the style directly affects the targeted element, not relying solely on inheritance:
+
+```css
+div {
+  color: blue;
+}
+
+p {
+  color: red; /* Directly set the color property in p */
+}
+
+div p {
+  color: green; /* This will now correctly override the color set on the p element */
+}
+```
+
+Alternatively, if inheritance is intended and the color needs to be adjusted, use !important flag:
+
+```css
+div p {
+  color: green !important; /* This will override any inherited color */
+}
+```
+
+By directly setting the color in the `p` selector or employing the `!important` flag, the specificity issue is circumvented, and the desired style is correctly applied.
