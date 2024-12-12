@@ -1,0 +1,17 @@
+The following CSS code snippet demonstrates an uncommon error related to specificity and inheritance:
+
+```css
+div {
+  color: blue;
+}
+
+p {
+  color: red;
+}
+
+div p {
+  color: green; /* This rule is intended to override the color of paragraphs within divs */
+}
+```
+
+In this example, the `div p` selector has higher specificity than the `p` selector, but it may unexpectedly not override the `color: red` inherited from the `p` selector if the `color` property is set to `inherit` or it's value is inherited from parent element  instead of directly declared in `p` selector. This happens because the specificity is resolved before the inheritance is considered. 
